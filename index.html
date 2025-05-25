@@ -1,103 +1,107 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Average Calculator - By HALIM-R</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f7f9fc;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    header {
-      background-color: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-    }
-    .container {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: center;
-    }
-    th {
-      background-color: #e2e8f0;
-    }
-    .green {
-      color: green;
-      font-weight: bold;
-    }
-    .red {
-      color: red;
-      font-weight: bold;
-    }
-    .summary {
-      margin-top: 2rem;
-      background: #f1f5f9;
-      padding: 1rem;
-      border-radius: 8px;
-    }
-    .note {
-      margin-top: 1rem;
-      font-style: italic;
-      color: #555;
-      background-color: #fff3cd;
-      padding: 1rem;
-      border-left: 5px solid #ffc107;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Average Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <div class="logo">My Average Calculator</div>
-    <p>Designed & Calculated by HALIM-R</p>
+    <div class="logo">
+      <h1>H</h1>
+      <p>My Average Calculator</p>
+    </div>
   </header>
-  <div class="container">
-    <h2>Semester Results</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Subject</th>
-          <th>Grade</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Written Expression</td><td class="green">14.45</td></tr>
-        <tr><td>Oral Expression</td><td class="green">15.85</td></tr>
-        <tr><td>Phonetics</td><td class="green">16.25</td></tr>
-        <tr><td>Grammar</td><td class="green">15.2</td></tr>
-        <tr><td>Technique of University Work</td><td class="green">15.2</td></tr>
-        <tr><td>Civilization</td><td class="green">15.8</td></tr>
-        <tr><td>Literature</td><td class="red">8.5</td></tr>
-        <tr><td>Digital Studies</td><td class="green">17</td></tr>
-        <tr><td>Text Studies</td><td class="green">19</td></tr>
-        <tr><td>French</td><td class="green">16</td></tr>
-      </tbody>
-    </table><div class="summary">
-  <h3>General Average: <span class="green">15.59</span> / 20</h3>
-  <p>Total Coefficients: 17</p>
-</div>
 
-<div class="note">
-  <strong>Note:</strong> You have shown excellent performance in most subjects. Keep pushing forward! However, pay attention to your Literature score. You can definitely improve it next semester!
-</div>
+  <main>
+    <section class="calculator">
+      <h2>Enter your marks</h2>
+      <form id="marksForm">
+        <!-- Written Expression -->
+        <div class="subject">
+          <label for="written_expression_td">Written Expression (TD):</label>
+          <input type="number" id="written_expression_td" placeholder="TD marks" required>
+          <input type="number" id="written_expression_exam" placeholder="Exam marks" required>
+        </div>
 
-  </div>
+        <!-- Phonetics -->
+        <div class="subject">
+          <label for="phonetics_td">Phonetics (TD):</label>
+          <input type="number" id="phonetics_td" placeholder="TD marks" required>
+          <input type="number" id="phonetics_exam" placeholder="Exam marks" required>
+        </div>
+
+        <!-- Grammar -->
+        <div class="subject">
+          <label for="grammar_td">Grammar (TD):</label>
+          <input type="number" id="grammar_td" placeholder="TD marks" required>
+          <input type="number" id="grammar_exam" placeholder="Exam marks" required>
+        </div>
+
+        <!-- Technique of University Work -->
+        <div class="subject">
+          <label for="technique_td">Technique of University Work (TD):</label>
+          <input type="number" id="technique_td" placeholder="TD marks" required>
+          <input type="number" id="technique_exam" placeholder="Exam marks" required>
+        </div>
+
+        <!-- Civilization -->
+        <div class="subject">
+          <label for="civilization_td">Civilization (TD):</label>
+          <input type="number" id="civilization_td" placeholder="TD marks" required>
+          <input type="number" id="civilization_exam" placeholder="Exam marks" required>
+        </div>
+
+        <!-- Oral Expression -->
+        <div class="subject">
+          <label for="oral_expression_td">Oral Expression (TD):</label>
+          <input type="number" id="oral_expression_td" placeholder="TD marks" required>
+          <input type="number" id="oral_expression_exam" placeholder="Exam marks" required>
+        </div>
+
+        <!-- Literature -->
+        <div class="subject">
+          <label for="literature_td">Literature (TD):</label>
+          <input type="number" id="literature_td" placeholder="TD marks" required>
+          <input type="number" id="literature_exam" placeholder="Exam marks" required>
+        </div>
+
+        <!-- Digital Studies -->
+        <div class="subject">
+          <label for="digital_studies_exam">Digital Studies (Exam only):</label>
+          <input type="number" id="digital_studies_exam" placeholder="Exam marks" required>
+        </div>
+
+        <!-- Text Studies -->
+        <div class="subject">
+          <label for="text_studies_exam">Text Studies (Exam only):</label>
+          <input type="number" id="text_studies_exam" placeholder="Exam marks" required>
+        </div>
+
+        <!-- French -->
+        <div class="subject">
+          <label for="french_exam">French (Exam only):</label>
+          <input type="number" id="french_exam" placeholder="Exam marks" required>
+        </div>
+
+        <button type="submit" id="calculate">Calculate Average</button>
+      </form>
+
+      <div id="results">
+        <h3>Your Final Results</h3>
+        <p id="final-grade">Final Grade: </p>
+        <p id="comment">Comment: </p>
+      </div>
+
+      <button id="download-pdf" style="display: none;">Download PDF</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Average Calculator</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
