@@ -2,109 +2,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Average Calculator - by HALIM-R</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <title>My Average Calculator - By HALIM-R</title>
   <style>
     body {
-      font-family: 'Cairo', sans-serif;
-      background-color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f9fc;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      color: #333;
     }
-    h1 {
+    header {
+      background-color: #0f172a;
+      color: white;
       text-align: center;
-      color: #2c3e50;
+      padding: 1rem;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-top: 1rem;
     }
     th, td {
-      padding: 12px;
+      border: 1px solid #ccc;
+      padding: 10px;
       text-align: center;
-      border-bottom: 1px solid #ddd;
     }
     th {
-      background-color: #2c3e50;
-      color: white;
+      background-color: #e2e8f0;
     }
-    .low {
-      color: red;
-      font-weight: bold;
-    }
-    .good {
+    .green {
       color: green;
       font-weight: bold;
     }
-    .footer-note {
-      margin-top: 20px;
-      padding: 10px;
-      background-color: #ecf0f1;
-      border-left: 5px solid #2c3e50;
+    .red {
+      color: red;
+      font-weight: bold;
     }
-    .download {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #2c3e50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      border-radius: 5px;
+    .summary {
+      margin-top: 2rem;
+      background: #f1f5f9;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .note {
+      margin-top: 1rem;
+      font-style: italic;
+      color: #555;
+      background-color: #fff3cd;
+      padding: 1rem;
+      border-left: 5px solid #ffc107;
     }
   </style>
 </head>
 <body>
-  <h1>My Average Calculator</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Module</th>
-        <th>Credit</th>
-        <th>Coef</th>
-        <th>Average</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Literature</td><td>0</td><td>1</td><td class="low">8.5</td></tr>
-      <tr><td>Oral Expression</td><td>4</td><td>2</td><td class="good">15.85</td></tr>
-      <tr><td>Written Expression</td><td>4</td><td>2</td><td class="good">14.45</td></tr>
-      <tr><td>Phonetics</td><td>4</td><td>2</td><td class="good">16.25</td></tr>
-      <tr><td>Grammar</td><td>4</td><td>2</td><td class="good">15.2</td></tr>
-      <tr><td>Civilization</td><td>2</td><td>2</td><td class="good">15.8</td></tr>
-      <tr><td>French</td><td>1</td><td>1</td><td class="good">16</td></tr>
-      <tr><td>University Techniques</td><td>4</td><td>2</td><td class="good">15.2</td></tr>
-      <tr><td>Text Studies</td><td>4</td><td>2</td><td class="good">19</td></tr>
-      <tr><td>Digital Studies</td><td>1</td><td>1</td><td class="good">17</td></tr>
-    </tbody>
-  </table>  <div class="footer-note">
-    <strong>ملاحظة:</strong> النتائج ممتازة بشكل عام. حافظ على هذا المستوى، وتميّز أكثر في المواد التي تحتاج لتحسين.
-  </div><button class="download" onclick="downloadPDF()">تحميل النتائج PDF</button>
+  <header>
+    <div class="logo">My Average Calculator</div>
+    <p>Designed & Calculated by HALIM-R</p>
+  </header>
+  <div class="container">
+    <h2>Semester Results</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Written Expression</td><td class="green">14.45</td></tr>
+        <tr><td>Oral Expression</td><td class="green">15.85</td></tr>
+        <tr><td>Phonetics</td><td class="green">16.25</td></tr>
+        <tr><td>Grammar</td><td class="green">15.2</td></tr>
+        <tr><td>Technique of University Work</td><td class="green">15.2</td></tr>
+        <tr><td>Civilization</td><td class="green">15.8</td></tr>
+        <tr><td>Literature</td><td class="red">8.5</td></tr>
+        <tr><td>Digital Studies</td><td class="green">17</td></tr>
+        <tr><td>Text Studies</td><td class="green">19</td></tr>
+        <tr><td>French</td><td class="green">16</td></tr>
+      </tbody>
+    </table><div class="summary">
+  <h3>General Average: <span class="green">15.59</span> / 20</h3>
+  <p>Total Coefficients: 17</p>
+</div>
 
-  <script>
-    function downloadPDF() {
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-      doc.text("My Average Calculator - by HALIM-R", 10, 10);
+<div class="note">
+  <strong>Note:</strong> You have shown excellent performance in most subjects. Keep pushing forward! However, pay attention to your Literature score. You can definitely improve it next semester!
+</div>
 
-      const headers = [["Module", "Credit", "Coef", "Average"]];
-      const rows = [
-        ["Literature", "0", "1", "8.5"],
-        ["Oral Expression", "4", "2", "15.85"],
-        ["Written Expression", "4", "2", "14.45"],
-        ["Phonetics", "4", "2", "16.25"],
-        ["Grammar", "4", "2", "15.2"],
-        ["Civilization", "2", "2", "15.8"],
-        ["French", "1", "1", "16"],
-        ["University Techniques", "4", "2", "15.2"],
-        ["Text Studies", "4", "2", "19"],
-        ["Digital Studies", "1", "1", "17"]
-      ];
-      doc.autoTable({ head: headers, body: rows, startY: 20 });
-      doc.save("My_Average_HalimR.pdf");
-    }
-  </script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script></body>
+  </div>
+</body>
 </html>
